@@ -25,10 +25,11 @@ for instance in $@
 do
     echo "checking for instance id"
     INSTANCE_ID=$(get_instance_id $instance)
+    echo "instance id : $INSTANCE_ID"
     if [ $ACTION_ITEM == "create" ]; then
         if [ $INSTANCE_ID == "None" ]; then
             echo "Launching instance : $instance"
-            INSTANCE_ID=$(aws ec2 run-instances \
+            INSTANCE_ID=$( aws ec2 run-instances \
                 --image-id $AMI_ID \
                 --instance-type t3.micro \
                 --security-groups "roboshop-common" "roboshop-$instance" \
