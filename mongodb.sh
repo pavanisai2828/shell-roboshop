@@ -21,9 +21,9 @@ fi
 
 VALIDATE(){
     if [ $1 -ne 0 ]; then
-        echo -e "$Timestamp [ERROR] Failure....! $R"
+        echo -e "$Timestamp [ERROR] Failure....! $R " | tee -a $LOGS_FILE
     else
-        echo -e "$Timestamp [Info] Success..! $G"
+        echo -e "$Timestamp [Info] Success..! $G" | tee -a $LOGS_FILE
     fi
 }
 
