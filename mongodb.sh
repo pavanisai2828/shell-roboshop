@@ -14,7 +14,7 @@ Y="\e[33m"
 N="\e[0m"
 Timestamp=$(date "+%Y-%m-%d %H:%M:%S")
 
-if [ USER_ID -ne 0 ];then
+if [ $USER_ID -ne 0 ];then
     echo -e "$Timestamp [ERROR] $R Please switch to root before executing $N" | tee -a $LOGS_FILE
     exit 1
 fi
