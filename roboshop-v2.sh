@@ -12,6 +12,6 @@ fi
 
 ACTION_ITEM=$1
 echo "$ACTION_ITEM"
-shit 
+shift 
 echo $@
     
