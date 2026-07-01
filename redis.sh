@@ -4,6 +4,7 @@ LOGS_DIR="/var/log/roboshop"
 sudo mkdir -p $LOGS_DIR
 sudo chown -R ec2-user:ec2-user $LOGS_DIR
 sudo chmod -R 755 $LOGS_DIR
+LOGS_FILE="$LOGS_DIR/$0.log"
 
 USER_ID=$(id -u)
 R="\e[31m"
@@ -37,6 +38,10 @@ VALIDATE $? "Allowing remote connections"
 systemctl enable redis &>> $LOGS_FILE
 systemctl start redis &>> $LOGS_FILE
 VALIDATE $? "Starting redis"
+
+systemctl enable redis &>> $LOGS_FILE
+systemctl start redis &>> $LOGS_FILE
+VALIDATE $? "Started Redis"
 
 
 
