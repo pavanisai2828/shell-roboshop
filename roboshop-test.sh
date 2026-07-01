@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/usr/local/bin
 
 AMI_ID="ami-0220d79f3f480ecf5"
 ZONE_ID="Z07423591GD2G8GTI4KPQ"
