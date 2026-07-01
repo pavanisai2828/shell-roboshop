@@ -17,10 +17,9 @@ if [ "$ACTION_ITEM" != "create" ] && [ "$ACTION_ITEM" != "delete" ]; then
     exit 1
 fi
 get_instance_id(){
-    instance_name=$1
-    aws ec2 describe-instances --filters "Name=tag:Name,Values=roboshop-$instance_name" "Name=instance-state-name,Values=running" --query "Reservations[0].Instances[0].InstanceId" --output text
+    name=$1
+    aws ec2 describe-instances --filters "Name=tag:Name,Values=roboshop-$name" "Name=instance-state-name,Values=running" --query "Reservations[0].Instances[0].InstanceId" --output text
 }
-
 for instance in $@
 do
     echo "checking for instance id"
