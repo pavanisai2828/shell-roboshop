@@ -27,11 +27,9 @@ VALIDATE(){
     fi
 }
 
-cp mongo.repo /etc/yum.repos.d/mongo.repo
-VALIDATE $? "Adding Mongo Repo"
 
 dnf install mongodb-org -y &>> $LOGS_FILE
-VALIDATE $? "installing Mongodb"
+VALIDATE $? "Installing MongoDB"
 
 systemctl enable --now mongod
 VALIDATE $? "enabling and starting mongo db services"
