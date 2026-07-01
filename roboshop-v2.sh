@@ -10,4 +10,8 @@ if [ $# -lt 2 ]; then
     exit 1
 fi 
 
-echo $1
+ACTION_ITEM=$1
+echo "$ACTION_ITEM"
+shit 
+echo $@
+    
